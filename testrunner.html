@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Weevar Tests</title>
+    <link rel="stylesheet" href="node_modules/mocha/mocha.css">
+    <style>
+        ul {
+            margin-bottom: .3em !important;
+        }
+        li {
+            line-height: 1.2em;
+        }
+        h1 {
+            font-weight: bold !important;
+        }
+    </style>
+</head>
+<body>
+<div id="mocha"></div>
+<script src="node_modules/mocha/mocha.js"></script>
+<script src="node_modules/chai/chai.js"></script>
+<script>mocha.setup('bdd')</script>
+
+<!-- load code you want to test here -->
+<script src="test/test.js"></script>
+<script src="build/weevar.min.js"></script>
+
+<!-- load your test files here -->
+<script src="test/utilities.js"></script>
+<script src="test/test-configuration.js"></script>
+<script src="test/test-api.js"></script>
+<script src="test/test-site.js"></script>
+
+<script>
+    mocha.checkLeaks();
+    mocha.run();
+</script>
+</body>
+</html>
